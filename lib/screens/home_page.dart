@@ -14,14 +14,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-
-  final TextEditingController titleController = TextEditingController();
-  final TextEditingController descriptionController = TextEditingController();
-
-  String? title;
-  String? description;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -159,22 +151,5 @@ class _HomePageState extends State<HomePage> {
         },
       ),
     );
-  }
-
-  textFieldDecoration(String hint, var icon) {
-    return InputDecoration(
-      prefixIcon: Icon(icon),
-      hintText: "Enter $hint hear...",
-      border: OutlineInputBorder(borderRadius: BorderRadius.circular(50)),
-      label: Text(hint),
-    );
-  }
-
-  clearControllersAndVar() {
-    titleController.clear();
-    descriptionController.clear();
-
-    title = null;
-    description = null;
   }
 }
